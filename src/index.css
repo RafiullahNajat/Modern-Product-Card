@@ -1,0 +1,125 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #212121;
+}
+
+.card {
+  position: relative;
+  width: 320px;
+  height: 480px;
+  background-color: #191919;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card::before {
+  content: " ";
+  position: absolute;
+  top: -65%;
+  width: 100%;
+  height: 100%;
+  background-color: #73bbc9;
+  transform: skewY(50deg);
+  transition: 0.5s;
+}
+
+.card:hover::before {
+  top: 38%;
+  transform: skewY(40deg);
+  background-color: #a10035;
+}
+
+.card::after {
+  content: " ";
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  font-weight: 600;
+  font-size: 6em;
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.card .img-box {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 1;
+}
+
+.img-box img {
+  height: 300px;
+  width: auto;
+}
+
+.content {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.card .content h3 {
+  font-size: 20px;
+  color: #73bbc9;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.6s;
+}
+
+.card .content .price {
+  font-size: 24px;
+  color: #73bbc9;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: 0.6s;
+}
+
+.card:hover h3,
+.card:hover .price {
+  color: #fec260;
+}
+
+.card .content button {
+  position: relative;
+  top: 100px;
+  opacity: 0;
+  padding: 10px 30px;
+  margin-top: 15px;
+  color: #000;
+  text-decoration: none;
+  background: #fec260;
+  border: 0;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 900;
+  transition: 0.5s;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+}
+
+.card:hover .content button {
+  top: 0;
+  opacity: 1;
+}
+
+.card .content button:hover {
+  color: #fec260;
+  background-color: #000;
+}
